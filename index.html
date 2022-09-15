@@ -30,20 +30,20 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Usuario">
+                            <input type="text" id="login" class="form-control" placeholder="Usuario">
                             
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="Senha">
+                            <input type="password" id="senha" class="form-control" placeholder="Senha">
                         </div>
                         <div class="row align-items-center remember">
                             <input type="checkbox">Lembrar me
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Login" class="btn float-right login_btn">
+                            <input type="submit"onclick="logar(); return false" value="Login" class="btn float-right login_btn">
                         </div>
 
                        
@@ -57,13 +57,24 @@
                     </div>
                        </div>
         </div>
-        
-    </div>
-    
+     </div>
+     <script>
+
+            function logar(){
+        var login = document.getElementById('login').value;
+        var senha = document.getElementById('senha').value;
+
+        if (login=="admin" && senha=="admin"){  
+            
+            alert('Login Correto')
+            location.href="home.html";
+
+        }else{
+            alert('Usuario ou senha Incorreto');
+        }
+        }
+     </script>
 
 
-
-
-
-</body>
+ </body>
 </html>
