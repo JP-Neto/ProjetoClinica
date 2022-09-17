@@ -1,31 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Pagina Home</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <br>
+    <div class="fist-group" >
+       
+        <ul id="cadastrar">
+            <li>
+                <span >Cadastrar</span>
+                <button class="btn_cadastrar" onclick="cadastro(); return false" ><i class="fa fa-drivers-license"></i></button> 
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="fist-group" >
+       
+        <ul id="consultar">
+            <li>
+                <span >Consultar </span>
+                <button class="btn_consultar"><i class="fa fa-drivers-license"></i></button> 
+            </li>
+        </ul>
+    </div>
     
-    <h3>Bem vindo a home</h3>
 
-    <div class="form-group">
-        <input type="submit"onclick="cadastro(); return false" value="Cadastrar" class="btn float-right login_btn">
+    <div class="content-list">
+
+        <div class="top">
+            <input type="text" id="inputnewtask" placeholder="Adicione uma nova tarefa">          
+            <button id="btn_newtask">
+                <i class="fa fa-plus"></i>
+            </button>
+
+        </div>
+
+        <ul id="tasklist"></ul>
+
     </div>
 
 
-    <script>
-
-        function cadastro(){
-
-            location.href="cadastro.html";
-        }
-    </script>
-
-
-
+    <div id="janelaEdicao">
+        <button id="janelaEdicaobtnFechar">
+            <i class = "fa-fa-remove"></i>
+        </button>
+        <h2>#1021</h2>
+        <hr>
+        <form>
+            <div class="frm-linha">
+                <label for="nome">Nome</label>
+                <input type="text" id="inputTakNomeEdicao">
+            </div>
+        </form>
+    </div>
+    <div id="janelaEdicaoFundo"></div>
+    
+    <script src="js/main.js"></script>
 </body>
 </html>

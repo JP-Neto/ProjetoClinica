@@ -9,9 +9,9 @@
 
 
 html,body{
-/*background-image:url('');*/
+background-image:url('../images/bg-fundo.jpg');
 background-size: cover;
-background-repeat: no-repeat;
+background-repeat: repeat;
 height: 100%;
 font-family: Poppins-Regular,sans-serif;
 
@@ -54,9 +54,11 @@ right: 20px;
 top: -45px;
 }
 
+
 .input-group-prepend span{
 width: 50px;
 background-color: #4169E1;
+border-radius: 20px;
 color: black;
 border:0 !important;
 }
@@ -98,7 +100,9 @@ margin-right: 5px;
 color: black;
 background-color: #4169E1;
 width: 100px;
+border-radius: 1px;
 font-family: Poppins-Regular,sans-serif;
+
 }
 
 .login_btn:hover{
@@ -113,3 +117,282 @@ color: white;
 .links a{
 margin-left: 4px;
 }
+
+.content-list{
+    margin:0 auto;
+    width: 100%;
+    max-width: 450px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: #2b2a2a;
+    padding: 55px;
+    border-radius: 12px;
+    font-family: Poppins-Regular,sans-serif;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.top input{
+    width: 350px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #191818;
+    outline: none;
+    font-size: 1.2rem;
+    background: #191818;
+    color: #FFFFFF;
+    
+}
+
+.top button{
+    width: 45px;
+    border-radius: 12px;
+    border: 1px solid #191818;
+    background: #191818;
+    color: #FFFFFF;
+    outline: none;
+}
+
+.top button:hover{
+    background: #1f1e1e;
+    cursor: pointer;
+}
+
+#tasklist{
+    list-style-type: none ;
+    padding: 0;
+    margin: 0;
+
+}
+#cadastrar{
+    list-style-type: none ;
+    padding: 0;
+    margin: 0;
+
+}
+
+#cadastrar li{
+ 
+    padding: 10px;
+     background: #191818;
+     color: #FFFFFF;
+     border-radius: 12px;
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     font-family: Poppins-Regular,sans-serif;
+ }
+
+#consultar{
+    list-style-type: none ;
+    padding: 0;
+    margin: 0;
+
+}
+
+#consultar li{
+ 
+    padding: 10px;
+     background: #191818;
+     color: #FFFFFF;
+     border-radius: 12px;
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     font-family: Poppins-Regular,sans-serif;
+ }
+
+#tasklist li{
+    padding: 20px;
+    background: #191818;
+    color: #FFFFFF;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-family: Poppins-Regular,sans-serif;
+
+}
+.fist-group{
+    align-items: center;
+    text-align: center;
+    margin:0 ;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    font-family: Poppins-Regular,sans-serif;
+}
+
+.btn_action{
+    border-radius: 20px;
+    border: 1px solid #191818;
+    width: 38px;
+    height: 38px;
+    margin-right: 8px;
+    cursor: pointer;
+    background: #2b2a2a;
+    color:#FFFFFF;
+
+}
+.btn_cadastrar{
+    border-radius: 20px;
+    border: 1px solid #191818;
+    width: 38px;
+    height: 38px;
+    margin-right: 8px;
+    cursor: pointer;
+    background: #2b2a2a;
+    color:#FFFFFF;
+
+}
+.btn_consultar{
+    border-radius: 20px;
+    border: 1px solid #191818;
+    width: 38px;
+    height: 38px;
+    margin-right: 8px;
+    cursor: pointer;
+    background: #2b2a2a;
+    color:#FFFFFF;
+
+}
+
+
+.btn_action:hover{
+    background: #3c3a3a;
+}
+
+.btn_cadastrar:hover{
+    background: #3c3a3a;
+}
+
+.btn_consultar:hover{
+    background: #3c3a3a;
+}
+
+
+#janelaEdicao{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding: 20%;
+    background: #191818;
+    border: 1px solid #2f2e2e;
+    width: 415px;
+    border-radius: 12px;
+    z-index: 200;
+    display: none;
+    
+}
+
+#janelaEdicao.abrir{
+    display: block !important;
+    
+}
+#janelaEdicaobtnFechar{
+    position: absolute;
+    top: -25px;
+    right: -18px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #2d2c2c;
+    background: #2b2b2c;
+    color: #CCCCCC;
+    outline: none;
+    cursor:pointer;
+    
+}
+
+#janelaEdicaoFundo{
+    position:fixed;
+    top:0;
+    background-color: #000000;
+    bottom: 0;
+    left:0;
+    opacity: 0.9;
+    z-index: 100;
+    right: 0;
+    display: none;
+
+}
+
+#janelaEdicao.Abrir{
+    display: block !important;
+}
+
+.frm{
+    width: 100%;
+    margin-top: 20px;
+}
+.frm-linha{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.frm-linha label{
+    margin-bottom: 7px;
+
+}
+.frm-linha input{
+    padding: 15px;
+    border-radius: 12px;
+    outline: none;
+    border: 1px solid #191818;
+    font-size: 1.2rem;
+    background: #2b2b2c;
+    color:#FFFFFF;
+
+}
+.frm-linha button{
+    background: #2d2c2c;
+    border: 1px solid #191818;
+    padding: 7px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    color: #CCCCCC;
+    cursor: pointer;
+    height: 50px;
+    font-size: 1.3rem;
+    outline: none;
+}
+
+.frm-linha button:hover{
+    background: #3c3a3a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
