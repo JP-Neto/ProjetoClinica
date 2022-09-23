@@ -281,9 +281,10 @@ margin-left: 4px;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-    padding: 20%;
+    padding: 20px;
     background: #191818;
     border: 1px solid #2f2e2e;
+    color: #FFFFFF;
     width: 415px;
     border-radius: 12px;
     z-index: 200;
@@ -295,8 +296,10 @@ margin-left: 4px;
     display: block !important;
     
 }
-#janelaEdicaobtnFechar{
+
+#janelaEdicaobtnfechar{
     position: absolute;
+    font-size: 24px;
     top: -25px;
     right: -18px;
     width: 50px;
@@ -304,16 +307,18 @@ margin-left: 4px;
     border-radius: 50px;
     border: 1px solid #2d2c2c;
     background: #2b2b2c;
-    color: #CCCCCC;
+    color: #FFFFFF;
     outline: none;
-    cursor:pointer;
+    cursor: pointer;
     
 }
 
-#janelaEdicaoFundo{
+
+#janelaEdicaoFundo {
     position:fixed;
     top:0;
     background-color: #000000;
+    color:#CCCCCC;
     bottom: 0;
     left:0;
     opacity: 0.9;
@@ -323,18 +328,21 @@ margin-left: 4px;
 
 }
 
-#janelaEdicao.Abrir{
+#janelaEdicaoFundo.abrir{
     display: block !important;
 }
 
-.frm{
+
+.form{
     width: 100%;
     margin-top: 20px;
 }
+
 .frm-linha{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+    color: #FFFFFF;
 }
 
 .frm-linha label{
@@ -347,8 +355,8 @@ margin-left: 4px;
     outline: none;
     border: 1px solid #191818;
     font-size: 1.2rem;
-    background: #2b2b2c;
-    color:#FFFFFF;
+    background: #2d2c2c;
+    color:#FFF;
 
 }
 .frm-linha button{
@@ -357,16 +365,23 @@ margin-left: 4px;
     padding: 7px;
     margin-bottom: 10px;
     border-radius: 12px;
-    color: #CCCCCC;
+    color: #FFFFFF;
     cursor: pointer;
     height: 50px;
     font-size: 1.3rem;
     outline: none;
+    
 }
 
 .frm-linha button:hover{
     background: #3c3a3a;
 }
+
+.janelaEdicaobtnfechar button:hover{
+    background: #3c3aba;
+
+}
+
 
 
 

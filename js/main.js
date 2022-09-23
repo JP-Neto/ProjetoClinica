@@ -2,9 +2,11 @@ let inputnewtask = document.querySelector('#inputnewtask');
 let btn_newtask = document.querySelector('#btn_newtask');
 let tasklist = document.querySelector('#tasklist');
 let inputcadastrar = document.getElementById('#btn_cadastrar');
-let janelaEdicao = document.getElementById('#janelaEdicao');
-let janelaEdicaobtnFechar = document.getElementById('#janelaEdicaobtnFechar');
-
+let janelaEdicao = document.querySelector('#janelaEdicao');
+let janelaEdicaoFundo = document.querySelector('#janelaEdicaoFundo')
+let janelaEdicaobtnfechar = document.querySelector('#janelaEdicaobtnfechar');
+let btn_cancelar = document.getElementById('#btn_cancelar');
+let btnAtualizarTarefa = document.querySelector('#btnAtualizarTarefa');
 
 inputnewtask.addEventListener('keypress',(e) => {
 
@@ -17,23 +19,37 @@ inputnewtask.addEventListener('keypress',(e) => {
     }
 });
 
-janelaEdicaobtnFechar.addEventListener('click',(e) => {
-        alternarJanelaEdicao();
+
+janelaEdicaobtnfechar.addEventListener('click',(e) => {
+    AlternarJanelaEdicao();
 
 });
 
 btn_newtask.addEventListener('click',(e) => {
+
     let task = {
         nome: inputnewtask.value,
         id: gerarId(),
      }
      addtask(task);
+
 });
 
 function gerarId(){
     return Math.floor(Math.random()*3000);
     // gera um numero Randomico math.floor arendoda o numero
 }
+
+
+btnAtualizarTarefa.addEventListener('click', (e)=>{
+    e.preventDefault();
+
+    let idtask = idtask.innerHTML.replace('#','');
+
+
+
+});
+
 
 function addtask(task){
     let li= createTagLI(task);
@@ -72,7 +88,7 @@ function createTagLI(task){
 function edit(idtask){
         let li = document.getElementById(''+idtask+'');
         if(li){
-            
+            AlternarJanelaEdicao();
         }
     }
 
@@ -83,24 +99,24 @@ function delet(idtask){
         let li = document.getElementById(''+idtask+'');
         if(li){
             tasklist.removeChild(li);
+        }else{
+            alert('Elemento Html Não Encontrado!')
         }
     }
 }
 
-
-
 function logar(){
-var login = document.getElementById('login').value;
-var senha = document.getElementById('senha').value;
+    var login = document.getElementById('login').value;
+    var senha = document.getElementById('senha').value;
 
-if (login=="admin" && senha=="admin"){  
+        if (login=="admin" && senha=="admin"){  
 
-    location.href="home.html";
+            location.href="home.html";
 
-}else{
-alert('Usuario ou senha Incorreto ');
-}
-}
+        }else{
+        alert('Usuario ou senha Incorreto ');
+        }
+ }
 
 
 
@@ -109,14 +125,8 @@ function cadastro(){
     location.href="cadastro.html";
 }
 
-btn_cadastrar.addEventListener('click',(e) => {
-  
-    alert('Usuario ou senha Incorreto ');
 
-    //Implementar essa função de esculta melhorar codigo
-});
-
-function alternarJanelaEdicao() {
+function AlternarJanelaEdicao() {
     janelaEdicao.classList.toggle('abrir');
     janelaEdicaoFundo.classList.toggle('abrir');
 }
