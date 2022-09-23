@@ -1,12 +1,14 @@
 let inputnewtask = document.querySelector('#inputnewtask');
 let btn_newtask = document.querySelector('#btn_newtask');
 let tasklist = document.querySelector('#tasklist');
-let inputcadastrar = document.getElementById('#btn_cadastrar');
+let inputcadastrar = document.querySelector('#btn_cadastrar');
 let janelaEdicao = document.querySelector('#janelaEdicao');
 let janelaEdicaoFundo = document.querySelector('#janelaEdicaoFundo')
 let janelaEdicaobtnfechar = document.querySelector('#janelaEdicaobtnfechar');
-let btn_cancelar = document.getElementById('#btn_cancelar');
+let btn_cancelar = document.querySelector('#btn_cancelar');
 let btnAtualizarTarefa = document.querySelector('#btnAtualizarTarefa');
+let idtarefaEdicao = document.querySelector('#idtarefaEdicao');
+let inputTakNomeEdicao= document.querySelector('#inputTakNomeEdicao');
 
 inputnewtask.addEventListener('keypress',(e) => {
 
@@ -44,9 +46,22 @@ function gerarId(){
 btnAtualizarTarefa.addEventListener('click', (e)=>{
     e.preventDefault();
 
-    let idtask = idtask.innerHTML.replace('#','');
+            let idtask = idtask.innerHTML.replace('#','');
 
+            let task ={
+                nome: inputTakNomeEdicao.value,
+                id:idtask,
+            }
 
+            let task_atual = document.getElementById(''+idtask+'');
+
+        if(task_atual){
+            let li = createTagLI(task);
+            tasklist.replaceChild(li, task_atual);
+         AlternarJanelaEdicao();
+        }else{
+            alert('Elemento Html Não Encontrado!');
+        }
 
 });
 
@@ -86,13 +101,16 @@ function createTagLI(task){
 }
 
 function edit(idtask){
-        let li = document.getElementById(''+idtask+'');
-        if(li){
+        let li = document.getElementById(''+ idtask +'');
+        if(li) {
+            idtarefaEdicao.innerHTML = '#'+ idtask;
+            inputTakNomeEdicao.value= li.innerText;
             AlternarJanelaEdicao();
+        }else{
+            alert('Elemento HTML não econtrado');
         }
     }
-
-
+    
 function delet(idtask){
     let confirm = window.confirm('Tem ceterza que deseja Excluir?');
     if(confirm) {
@@ -100,7 +118,7 @@ function delet(idtask){
         if(li){
             tasklist.removeChild(li);
         }else{
-            alert('Elemento Html Não Encontrado!')
+            alert('Elemento Html Não Encontrado!');
         }
     }
 }
@@ -118,13 +136,10 @@ function logar(){
         }
  }
 
-
-
 function cadastro(){
 
     location.href="cadastro.html";
 }
-
 
 function AlternarJanelaEdicao() {
     janelaEdicao.classList.toggle('abrir');
